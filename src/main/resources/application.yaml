@@ -1,0 +1,44 @@
+server:
+  port: 8080
+
+spring:
+  ai:
+    ollama:
+      base-url: http://localhost:11434
+      api-key: {YOUR_API_KEY}
+
+      chat:
+        options:
+          model: glm-4.7:cloud
+
+      embedding:
+        options:
+          model: nomic-embed-text
+
+    vectorstore:
+      qdrant:
+        host: localhost
+        port: 6334
+        collection-name: rag_chunks
+        initialize-schema: true
+
+logging:
+  level:
+    org.springframework.ai: DEBUG
+    org.springframework.web.client: DEBUG
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+
+rag:
+  chunk:
+    size: 1000
+    overlap: 200
+
+  retrieval:
+    top-k: 5
+    similarity-threshold: 0.0
+
+  documents:
+    max-file-size: 52428800
