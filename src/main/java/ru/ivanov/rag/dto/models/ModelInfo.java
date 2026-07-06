@@ -1,4 +1,4 @@
-package ru.ivanov.rag.entity;
+package ru.ivanov.rag.dto.models;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

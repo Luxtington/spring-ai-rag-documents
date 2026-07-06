@@ -85,7 +85,7 @@ public class DocumentService {
 
         embeddingService.deleteChunks(document.getVectorIds());
 
-        repository.delete(id);
+        repository.deleteById(id);
     }
 
     private String getExtension(String fileName) {

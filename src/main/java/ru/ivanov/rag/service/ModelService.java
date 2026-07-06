@@ -1,7 +1,7 @@
 package ru.ivanov.rag.service;
 
 import org.springframework.stereotype.Service;
-import ru.ivanov.rag.entity.ModelInfo;
+import ru.ivanov.rag.dto.models.ModelInfo;
 import ru.ivanov.rag.dto.models.ModelsResponse;
 
 import java.util.List;

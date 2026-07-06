@@ -1,4 +1,4 @@
-package ru.ivanov.rag.entity;
+package ru.ivanov.rag.dto.chunk;
 
 import lombok.Builder;
 import lombok.Data;
