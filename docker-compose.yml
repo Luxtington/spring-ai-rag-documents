@@ -3,9 +3,7 @@ version: "3.9"
 services:
 
   qdrant:
-
     image: qdrant/qdrant:latest
-
     container_name: qdrant
 
     ports:
@@ -13,7 +11,6 @@ services:
       - "6334:6334"
 
   app:
-
     build: .
 
     ports:
@@ -23,4 +20,8 @@ services:
       - qdrant
 
     environment:
-      OLLAMA_API_KEY: ${OLLAMA_API_KEY}
+      SPRING_AI_OLLAMA_BASE_URL: http://host.docker.internal:11434
+      SPRING_AI_OLLAMA_API_KEY: ${OLLAMA_API_KEY}
+
+      SPRING_AI_VECTORSTORE_QDRANT_HOST: qdrant
+      SPRING_AI_VECTORSTORE_QDRANT_PORT: 6334
