@@ -4,8 +4,8 @@ server:
 spring:
   ai:
     ollama:
-      base-url: http://localhost:11434
-      api-key: {YOUR_API_KEY}
+      base-url: ${SPRING_AI_OLLAMA_BASE_URL:http://localhost:11434}
+      api-key: ${SPRING_AI_OLLAMA_API_KEY}
 
       chat:
         options:
@@ -17,20 +17,10 @@ spring:
 
     vectorstore:
       qdrant:
-        host: localhost
-        port: 6334
+        host: ${SPRING_AI_VECTORSTORE_QDRANT_HOST:localhost}
+        port: ${SPRING_AI_VECTORSTORE_QDRANT_PORT:6334}
         collection-name: rag_chunks
         initialize-schema: true
-
-    datasource:
-      url: jdbc:h2:mem:rag_docs
-      driver-class-name: org.h2.Driver
-      username: sa
-      password:
-
-    jpa:
-      hibernate:
-        ddl-auto: update
 
 logging:
   level:
